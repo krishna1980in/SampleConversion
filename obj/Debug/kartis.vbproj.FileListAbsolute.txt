@@ -1,0 +1,4 @@
+D:\ananth_backup\conversion\kartris-master\kartris-master\obj\Debug\kartis.vbproj.AssemblyReference.cache
+D:\ananth_backup\conversion\kartris-master\kartris-master\obj\Debug\kartis.vbproj.GenerateResource.cache
+D:\ananth_backup\conversion\kartris-master\kartris-master\obj\Debug\EmployeeManagementSystem.Resources.resources
+D:\ananth_backup\conversion\kartris-master\kartris-master\obj\Debug\kartis.vbproj.CoreCompileInputs.cache
