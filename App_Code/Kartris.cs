@@ -13,12 +13,7 @@ using MimeKit;
 
 
 
-/// <summary>
-/// Various types and values
-/// Moved this to top in 1.4 as we need to
-/// change version and issue date with every
-/// release, so easier to find up here
-/// </summary>
+
 
 public sealed class CkartrisEnumerations
 {
@@ -486,54 +481,54 @@ public sealed class CkartrisDisplayFunctions
 	
 	public static string ReplaceAccentedCharacters(string strInput)
 	{
-		strInput = strInput.Replace("â", "a");
-		strInput = strInput.Replace("ã", "a");
-		strInput = strInput.Replace("ä", "a");
-		strInput = strInput.Replace("à", "a'");
-		strInput = strInput.Replace("á", "a'");
-		strInput = strInput.Replace("À", "A");
-		strInput = strInput.Replace("Á", "A");
-		strInput = strInput.Replace("Â", "A");
-		strInput = strInput.Replace("Ã", "A");
-		strInput = strInput.Replace("Ä", "A");
-		strInput = strInput.Replace("ê", "e");
-		strInput = strInput.Replace("ë", "e");
-		strInput = strInput.Replace("è", "e'");
-		strInput = strInput.Replace("é", "e'");
-		strInput = strInput.Replace("È", "E'");
-		strInput = strInput.Replace("É", "E'");
-		strInput = strInput.Replace("Ê", "E");
-		strInput = strInput.Replace("Ë", "E");
-		strInput = strInput.Replace("î", "i");
-		strInput = strInput.Replace("ï", "i");
-		strInput = strInput.Replace("ì", "i'");
-		strInput = strInput.Replace("í", "i'");
-		strInput = strInput.Replace("Ì", "I");
-		strInput = strInput.Replace("Í", "I");
-		strInput = strInput.Replace("Î", "I");
-		strInput = strInput.Replace("Ï", "I");
-		strInput = strInput.Replace("ô", "o");
-		strInput = strInput.Replace("õ", "o");
-		strInput = strInput.Replace("ö", "o");
-		strInput = strInput.Replace("ò", "o'");
-		strInput = strInput.Replace("ó", "o'");
-		strInput = strInput.Replace("Ò", "O");
-		strInput = strInput.Replace("Ó", "O");
-		strInput = strInput.Replace("Ô", "O");
-		strInput = strInput.Replace("Õ", "O");
-		strInput = strInput.Replace("Ö", "O");
-		strInput = strInput.Replace("ß", "ss");
-		strInput = strInput.Replace("û", "u");
-		strInput = strInput.Replace("ü", "u");
-		strInput = strInput.Replace("ù", "u'");
-		strInput = strInput.Replace("ú", "u'");
-		strInput = strInput.Replace("Ù", "U");
-		strInput = strInput.Replace("Ú", "U");
-		strInput = strInput.Replace("Û", "U");
-		strInput = strInput.Replace("Ü", "U");
-		strInput = strInput.Replace("ñ", "n");
-		strInput = strInput.Replace("Ý", "Y");
-		strInput = strInput.Replace("ý", "y");
+		strInput = strInput.Replace("ï¿½", "a");
+		strInput = strInput.Replace("ï¿½", "a");
+		strInput = strInput.Replace("ï¿½", "a");
+		strInput = strInput.Replace("ï¿½", "a'");
+		strInput = strInput.Replace("ï¿½", "a'");
+		strInput = strInput.Replace("ï¿½", "A");
+		strInput = strInput.Replace("ï¿½", "A");
+		strInput = strInput.Replace("ï¿½", "A");
+		strInput = strInput.Replace("ï¿½", "A");
+		strInput = strInput.Replace("ï¿½", "A");
+		strInput = strInput.Replace("ï¿½", "e");
+		strInput = strInput.Replace("ï¿½", "e");
+		strInput = strInput.Replace("ï¿½", "e'");
+		strInput = strInput.Replace("ï¿½", "e'");
+		strInput = strInput.Replace("ï¿½", "E'");
+		strInput = strInput.Replace("ï¿½", "E'");
+		strInput = strInput.Replace("ï¿½", "E");
+		strInput = strInput.Replace("ï¿½", "E");
+		strInput = strInput.Replace("ï¿½", "i");
+		strInput = strInput.Replace("ï¿½", "i");
+		strInput = strInput.Replace("ï¿½", "i'");
+		strInput = strInput.Replace("ï¿½", "i'");
+		strInput = strInput.Replace("ï¿½", "I");
+		strInput = strInput.Replace("ï¿½", "I");
+		strInput = strInput.Replace("ï¿½", "I");
+		strInput = strInput.Replace("ï¿½", "I");
+		strInput = strInput.Replace("ï¿½", "o");
+		strInput = strInput.Replace("ï¿½", "o");
+		strInput = strInput.Replace("ï¿½", "o");
+		strInput = strInput.Replace("ï¿½", "o'");
+		strInput = strInput.Replace("ï¿½", "o'");
+		strInput = strInput.Replace("ï¿½", "O");
+		strInput = strInput.Replace("ï¿½", "O");
+		strInput = strInput.Replace("ï¿½", "O");
+		strInput = strInput.Replace("ï¿½", "O");
+		strInput = strInput.Replace("ï¿½", "O");
+		strInput = strInput.Replace("ï¿½", "ss");
+		strInput = strInput.Replace("ï¿½", "u");
+		strInput = strInput.Replace("ï¿½", "u");
+		strInput = strInput.Replace("ï¿½", "u'");
+		strInput = strInput.Replace("ï¿½", "u'");
+		strInput = strInput.Replace("ï¿½", "U");
+		strInput = strInput.Replace("ï¿½", "U");
+		strInput = strInput.Replace("ï¿½", "U");
+		strInput = strInput.Replace("ï¿½", "U");
+		strInput = strInput.Replace("ï¿½", "n");
+		strInput = strInput.Replace("ï¿½", "Y");
+		strInput = strInput.Replace("ï¿½", "y");
 		return strInput;
 	}
 	
@@ -543,7 +538,7 @@ public sealed class CkartrisDisplayFunctions
 	public static string SanitizeProductName(string strInput)
 	{
 		strInput = strInput.Replace(" ", "e");
-		RegularExpressions.Regex objRegex = new RegularExpressions.Regex("[^A-Za-z 0-9 \\.,\\?'\"!@#\\$%\\^&\\*\\(\\)-_=\\+;:<>\\/\\\\\\|\\}\\{\\[\\]`~]*°");
+		RegularExpressions.Regex objRegex = new RegularExpressions.Regex("[^A-Za-z 0-9 \\.,\\?'\"!@#\\$%\\^&\\*\\(\\)-_=\\+;:<>\\/\\\\\\|\\}\\{\\[\\]`~]*ï¿½");
 		return System.Convert.ToString(objRegex.Replace(strInput, ""));
 	}
 	
@@ -567,7 +562,7 @@ public sealed class CkartrisDisplayFunctions
 		strInput = strInput.Replace(Constants.vbCr, "");
 		strInput = strInput.Replace(System.Convert.ToString("\t"), "");
 		strInput = strInput.Replace("//", "/");
-		strInput = strInput.Replace("°", "o");
+		strInput = strInput.Replace("ï¿½", "o");
 		strInput = strInput.Replace("./", "_/");
 		
 		//Return strInput.Replace("&", "-And-")
