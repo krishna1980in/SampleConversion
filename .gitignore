@@ -6,3 +6,6 @@
 /Images/Products
 /Uploads
 /.vs
+/obj
+/bin
+/packages
