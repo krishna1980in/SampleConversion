@@ -14,6 +14,7 @@
 // ========================================================================
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -23,6 +24,7 @@ using System.Runtime.CompilerServices;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 using CkartrisEnumerations;
 using CkartrisDataManipulation;

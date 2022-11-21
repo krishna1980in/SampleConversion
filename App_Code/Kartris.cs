@@ -10,6 +10,9 @@ using System.Xml;
 using MailKit.Net.Smtp;
 using MailKit;
 using MimeKit;
+using System.Data;
+using System.Data.SqlClient;
+
 
 
 
@@ -18,7 +21,7 @@ using MimeKit;
 public sealed class CkartrisEnumerations
 {
 	
-	public const decimal KARTRIS_VERSION = 3.3;
+	public const decimal KARTRIS_VERSION = 3.3M;
 	public static readonly DateTime KARTRIS_VERSION_ISSUE_DATE = new DateTime(2022, 6, 8); //' MM/dd/yyyy
 	
 	public enum LANG_ELEM_TABLE_TYPE
@@ -107,7 +110,7 @@ public sealed class CkartrisFormatErrors
 		
 		try
 		{
-			if (HttpContext.Current.Session("KartrisUserCulture") IsNot null)
+			if (HttpContext.Current.Session("KartrisUserCulture") != null)
 			{
 				strCurrentCulture = HttpContext.Current.Session("KartrisUserCulture").ToString();
 			}
@@ -656,8 +659,8 @@ public sealed class CkartrisDisplayFunctions
 			string strFormat = System.Convert.ToString(LanguagesBLL.GetDateFormat(numLanguageID, chrType));
 			try
 			{
-				strOutput = System.Convert.ToString((System.Convert.ToDateTime(CkartrisDataManipulation.FixNullFromDB(datDate))).ToString(strFormat,);
-				CultureInfo.CreateSpecificCulture(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName));
+				strOutput = System.Convert.ToString((System.Convert.ToDateTime(CkartrisDataManipulation.FixNullFromDB(datDate))).ToString(strFormat));
+				CultureInfo.CreateSpecificCulture(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName);
 			}
 			catch (Exception)
 			{
@@ -700,7 +703,7 @@ public sealed class CkartrisDisplayFunctions
 	
 	public static object RemoveXSS(object objText)
 	{
-		if (objText IsNot null && ReferenceEquals(objText.GetType(), Type.GetType("System.String")))
+		if (objText != null && ReferenceEquals(objText.GetType(), Type.GetType("System.String")))
 		{
 			objText = objText.Replace("<", "&lt;"); //<
 			objText = objText.Replace(">", "&gt;"); //>
@@ -1137,11 +1140,11 @@ public sealed class CkartrisDataManipulation
 		}
 		
 		//This is where a culture-specific template would be found (e.g. EN-GB)
-		strEmailTemplatePath_Culture = Current.Server.MapPath("~/Skins/" + strSkinFolder + "/Templates/Email_" +;
+		strEmailTemplatePath_Culture = Current.Server.MapPath("~/Skins/" + strSkinFolder + "/Templates/Email_" &
 		strTemplateType (+ "_" + strCulture +".html"));
 		
 		//This is where a general language template would be found (e.g. EN)
-		strEmailTemplatePath_Language = Current.Server.MapPath("~/Skins/" + strSkinFolder + "/Templates/Email_" +;
+		strEmailTemplatePath_Language = Current.Server.MapPath("~/Skins/" + strSkinFolder + "/Templates/Email_" &
 		strTemplateType (+ "_" + strLanguage +".html"));
 		
 		
@@ -1198,14 +1201,14 @@ public sealed class CkartrisDataManipulation
 	/// <remarks></remarks>
 	public static object SendEmail()
 	{
-		Optional ByVal strReplyTo string = "",;
-		Optional ByVal strFromName string = "",;
-		Optional ByVal sendEncoding Encoding = null,;
-		Optional ByVal strAttachment string = "",;
-		Optional ByVal blnSendAsHTML bool = false,;
-		Optional ByVal sendPriority MailPriority = MailPriority.Normal,;
-		Optional ByVal objBCCAddress MailAddressCollection = null,;
-		Optional ByVal objAdditionalToAddresses MailAddressCollection = null) bool;
+		string strReplyTo = "";
+		string strFromName  = "";
+		Encoding sendEncoding  = null;
+		string strAttachment = "";
+		bool blnSendAsHTML  = false;
+		MailPriority sendPriority  = MailPriority.Normal;
+		MailAddressCollection objBCCAddress  = null;
+		MailAddressCollection objAdditionalToAddresses  = null;
 		
 		//Belt and braces, let's ensure we don't mail the guest
 		//email addresses
@@ -1218,10 +1221,10 @@ public sealed class CkartrisDataManipulation
 				
 				//Write method - use javascript alert box to display email
 				Page pagCurrentPage = HttpContext.Current.Handler;
-				if (pagCurrentPage IsNot null)
+				if (pagCurrentPage != null)
 				{
 					string strBCCString = "";
-					if (objBCCAddress IsNot null)
+					if (objBCCAddress != null)
 					{
 						strBCCString = "BCC: ";
 						foreach (MailAddress objItem in objBCCAddress)
@@ -1280,14 +1283,14 @@ public sealed class CkartrisDataManipulation
 					{
 						objMailMessage.ReplyTo.Add(MailboxAddress.Parse(strReplyTo));
 					}
-					if (objAdditionalToAddresses IsNot null)
+					if (objAdditionalToAddresses != null)
 					{
 						foreach (MailAddress objItem in objAdditionalToAddresses)
 						{
 							objMailMessage.To.Add(MailboxAddress.Parse(objItem.Address));
 						}
 					}
-					if (objBCCAddress IsNot null)
+					if (objBCCAddress != null)
 					{
 						foreach (MailAddress objItem in objBCCAddress)
 						{
@@ -1427,7 +1430,7 @@ public sealed class CKartrisSearchManager
 	/// </summary>
 	public static object UpdateSearchCookie()
 	{
-		Optional ByVal strSearchMethod string = null, Optional ByVal sngMinPrice Single == -1, Optional ByVal sngMaxPrice Single == -1) string;
+		string strSearchMethod  = null; int sngMinPrice  = -1; int sngMaxPrice  = -1;
 		string strKeywords = strSearchedText + ",";
 		strKeywords = ValidateSearchKeywords(strKeywords);
 		
@@ -1602,7 +1605,7 @@ public sealed class CKartrisSearchManager
 	
 	public static object HighLightResultText()
 	{
-		ByValstrKeywordsstring)string;
+		string ByValstrKeywordsstring;
 		strContent = CkartrisDisplayFunctions.StripHTML(strContent);
 		if (string.IsNullOrEmpty(System.Convert.ToString(strContent)))
 		{
@@ -1640,7 +1643,7 @@ public sealed class CKartrisSearchManager
 					sdbTextHighlight.Append(strTempPrefix);
 					sdbTextHighlight.Append(strContent.Substring(numStartingIndex, numKeywordLength));
 					sdbTextHighlight.Append(strTempSuffix);
-					strContent = Strings.Left(System.Convert.ToString(strContent), numStartingIndex) + sdbTextHighlight.ToString() +;
+					strContent = Strings.Left(System.Convert.ToString(strContent), numStartingIndex) + sdbTextHighlight.ToString() &
 					Strings.Mid(System.Convert.ToString(strContent), numStartingIndex + numKeywordLength + 1);
 					numStartingIndex += System.Convert.ToInt32(sdbTextHighlight.Length);
 					sdbTextHighlight.Length = 0;
@@ -1795,15 +1798,13 @@ public sealed class CkartrisBLL
 			//Make sure we lowercase the entered domain as
 			//otherwise this check is case sensitive, which
 			//we don't want.
-			
+			if (GetKartConfig("general.security.ssl") == "e") 
 			{
 				
+				return Strings.Replace(System.Convert.ToString(GetKartConfig("general.webshopurl").ToLower()), "http://", "https://", 1, -1, (Microsoft.VisualBasic.CompareMethod) 0);
 				
-				
-				
-				
-				(GetKartConfig("general.security.ssl") == "e") return Strings.Replace(System.Convert.ToString(GetKartConfig("general.webshopurl").ToLower()), "http://", "https://", 1, -1, (Microsoft.VisualBasic.CompareMethod) 0);
 			}
+		}
 			catch (Exception)
 			{
 			}
@@ -1889,7 +1890,7 @@ public sealed class CkartrisBLL
 		/// </summary>
 		public static object SkinMasterConfig()
 		{
-			ByValintCustomerIDint, ByValintCustomerGroupIDint, ByValstrScriptNamestring)string;
+			string ByValintCustomerIDint, ByValintCustomerGroupIDint, ByValstrScriptNamestring;
 			string strSkinFolder = "";
 			
 			try
@@ -1982,14 +1983,14 @@ public sealed class CkartrisBLL
 					ReadSkinRules(tblSkinRules, docXML, "Category");
 					ReadSkinRules(tblSkinRules, docXML, "Script");
 					
-					if (HttpRuntime.Cache("tblSkinRules") IsNot null)
+					if (HttpRuntime.Cache("tblSkinRules") != null)
 					{
 						HttpRuntime.Cache.Remove("tblSkinRules");
 					}
 					
-					HttpRuntime.Cache.Add("tblSkinRules",;
-					tblSkinRules (, null, DateTime.MaxValue, TimeSpan.Zero,);
-					Caching.CacheItemPriority.High (, null));
+					HttpRuntime.Cache.Add("tblSkinRules",
+					tblSkinRules(null, DateTime.MaxValue, TimeSpan.Zero),
+					Caching.CacheItemPriority.High, null);
 				}
 			}
 			catch (Exception)
@@ -2065,7 +2066,7 @@ public sealed class CkartrisBLL
 				drwSkinRules = tblSkinRules.Select("ID = " + System.Convert.ToString(intID) + " AND Type = '" + strType + "' ");
 			}
 			
-			if (drwSkinRules IsNot null && drwSkinRules.Count() > 0)
+			if (drwSkinRules != null && drwSkinRules.Count() > 0)
 			{
 				foreach (DataRow drwSkinRule in drwSkinRules)
 				{
@@ -2113,12 +2114,12 @@ public sealed class CkartrisBLL
 			if (GetKartConfig("general.tax.pricesinctax") == "n" || GetKartConfig("frontend.display.showtax") == "y")
 			{
 				sbdItemEmailText.Append(" ");
-				sbdItemEmailText.Append(CurrenciesBLL.FormatCurrencyPrice(CUR_ID, numExTax,, false));
+				sbdItemEmailText.Append(CurrenciesBLL.FormatCurrencyPrice(CUR_ID, numExTax, false));
 				
 				if (ConfigurationManager.AppSettings("TaxRegime").ToLower() != "us" && ConfigurationManager.AppSettings("TaxRegime").ToLower() != "simple")
 				{
 					sbdItemEmailText.Append(" + ");
-					sbdItemEmailText.Append(CurrenciesBLL.FormatCurrencyPrice(CUR_ID, numTaxAmount,, false));
+					sbdItemEmailText.Append(CurrenciesBLL.FormatCurrencyPrice(CUR_ID, numTaxAmount, false));
 					sbdItemEmailText.Append(" ");
 					sbdItemEmailText.Append(GetGlobalResourceObject("Kartris", "ContentText_Tax"));
 					sbdItemEmailText.Append(" (");
@@ -2130,7 +2131,7 @@ public sealed class CkartrisBLL
 			else
 			{
 				sbdItemEmailText.Append(" ");
-				sbdItemEmailText.Append(CurrenciesBLL.FormatCurrencyPrice(CUR_ID, numIncTax,, false));
+				sbdItemEmailText.Append(CurrenciesBLL.FormatCurrencyPrice(CUR_ID, numIncTax, false));
 				sbdItemEmailText.Append("\r\n");
 			}
 			return sbdItemEmailText.ToString();
@@ -2152,14 +2153,14 @@ public sealed class CkartrisBLL
 		/// </summary>
 		public static object GetHTMLEmailRowText()
 		{
-			ByValstrDescriptionstring, ;
-			ByValnumExTaxdouble, ;
-			ByValnumIncTaxdouble, ;
-			ByValnumTaxAmountdouble, ;
-			ByValnumTaxRatedouble, ;
-			Optional ByVal CurrencyID int = 0,;
-			Optional ByVal VersionID long = 0,;
-			Optional ByVal ProductID long = 0) string;
+			string ByValstrDescriptionstring, 
+			ByValnumExTaxdouble, 
+			ByValnumIncTaxdouble, 
+			ByValnumTaxAmountdouble, 
+			ByValnumTaxRatedouble;
+			int CurrencyID  = 0;
+			long VersionID  = 0;
+			long ProductID  = 0;
 			int CUR_ID = 0;
 			string strImageURL = "";
 			string strImageTag = "";
@@ -2197,12 +2198,12 @@ public sealed class CkartrisBLL
 			//Then put the price on the second
 			if (GetKartConfig("general.tax.pricesinctax") == "n" || GetKartConfig("frontend.display.showtax") == "y")
 			{
-				sbdHTMLRowText.Append(CurrenciesBLL.FormatCurrencyPrice(CUR_ID, numExTax,, false));
+				sbdHTMLRowText.Append(CurrenciesBLL.FormatCurrencyPrice(CUR_ID, numExTax, false));
 				
 				if (ConfigurationManager.AppSettings("TaxRegime").ToLower() != "us" && ConfigurationManager.AppSettings("TaxRegime").ToLower() != "simple")
 				{
 					sbdHTMLRowText.Append(" + ");
-					sbdHTMLRowText.Append(CurrenciesBLL.FormatCurrencyPrice(CUR_ID, numTaxAmount,, false));
+					sbdHTMLRowText.Append(CurrenciesBLL.FormatCurrencyPrice(CUR_ID, numTaxAmount, false));
 					sbdHTMLRowText.Append(" ");
 					sbdHTMLRowText.Append(GetGlobalResourceObject("Kartris", "ContentText_Tax"));
 					sbdHTMLRowText.Append(" (");
@@ -2213,7 +2214,7 @@ public sealed class CkartrisBLL
 			}
 			else
 			{
-				sbdHTMLRowText.Append(CurrenciesBLL.FormatCurrencyPrice(CUR_ID, numIncTax,, false));
+				sbdHTMLRowText.Append(CurrenciesBLL.FormatCurrencyPrice(CUR_ID, numIncTax, false));
 				//sbdHTMLRowText.Append(vbCrLf)
 			}
 			sbdHTMLRowText.Append("</td></tr>");
@@ -2251,8 +2252,8 @@ public sealed class CkartrisBLL
 			catch (Exception)
 			{
 				//Error occurred, most likely missing template
-				CkartrisFormatErrors.LogError("An error occurred processsing the email template. This can happen if you do not have the required " +;
-				"mail templates in your Skin's template folder. Each template should have the appropriate language "+;
+				CkartrisFormatErrors.LogError("An error occurred processsing the email template. This can happen if you do not have the required " &
+				"mail templates in your Skin's template folder. Each template should have the appropriate language "&
 				"culture. See http://www.kartris.com/Knowledgebase/HTML-email-templates__k-52.aspx for more information.");
 				return "An error occured - most likely the required template is missing. See http://www.kartris.com/Knowledgebase/HTML-email-templates__k-52.aspx for more information.";
 			}
@@ -2452,9 +2453,9 @@ public sealed class CkartrisCombinations
 		}
 		for (int i = 0; i <= arrTblProductOptionalOptions.GetUpperBound(0) - 1; i++)
 		{
-			if (!RecursiveOptionalCombinations(tblOptionalCombinations, i,)
+			if (!RecursiveOptionalCombinations(tblOptionalCombinations, i,arrTblProductOptionalOptions[i], arrTblProductOptionalOptions))
 			{
-				arrTblProductOptionalOptions[i], arrTblProductOptionalOptions);
+				
 				return false;
 			}
 		}
@@ -2526,21 +2527,21 @@ public sealed class CkartrisCombinations
 		tblTemp = tblResult.Copy();
 		
 		//' CROSS JOIN by Language
-		object tblJoinedResults = From a in tblNewData;
+		object tblJoinedResults = tblNewData;
 		object b = null;
 		
 		tblResult.Rows.Clear();
 		
 		//' For each new Joined row .. it will be added to the result.
-		foreach ( in tblJoinedResults)
+		foreach (object itmRow in tblJoinedResults)
 		{
 			string strID_List = itmRow.b("ID_List") + "," + itmRow.a("OPT_ID");
 			if (useIDListForBoth)
 			{
 				strID_List = itmRow.b("ID_List") + "," + itmRow.a("ID_List");
 			}
-			tblResult.Rows.Add(null,;
-			itmRow.b("OPT_Name") + "," + itmRow.a("OPT_Name"),;
+			tblResult.Rows.Add(null,
+			itmRow.b("OPT_Name") + "," + itmRow.a("OPT_Name"),
 			itmRow.a("LANG_ID"), strID_List);
 		}
 		
@@ -2621,10 +2622,10 @@ public sealed class CkartrisImages
 	/// </summary>
 	public static void SetImage()
 	{
-		ByValeImgTypeIMAGE_TYPE, ;
-		ByValstrImageNamestring, ;
-		Optional ByVal eImgSize IMAGE_SIZE = IMAGE_SIZE.enum_Auto,;
-		Optional ByVal blnSizeFromConfig bool = false);
+		string ByValeImgTypeIMAGE_TYPE,
+		ByValstrImageNamestring;
+		IMAGE_SIZE eImgSize  = IMAGE_SIZE.enum_Auto;
+		bool blnSizeFromConfig  = false;
 		
 		string strImgPath = strImagesPath;
 		string strItemPlaceHolderConfig = "";
@@ -2701,7 +2702,7 @@ public sealed class CkartrisImages
 		{
 			Control ctlFound = FindControlRecursive(ctlChild, ctlControlIDToFind);
 			
-			if (ctlFound IsNot null)
+			if (ctlFound != null)
 			{
 				return ctlFound;
 			}
@@ -2974,7 +2975,7 @@ public sealed class CKartrisCSVExporter
 	/// </summary>
 	public static void WriteToCSV()
 	{
-		ByVal intFieldDelimiter int, ByVal intStringDelimiter int);
+		int intFieldDelimiter; int intStringDelimiter;
 		FieldDelimiter = intFieldDelimiter == 0 ? " " : (Strings.Chr(System.Convert.ToInt32(intFieldDelimiter)));
 		StringDelimiter = intStringDelimiter == 0 ? "" : (Strings.Chr(System.Convert.ToInt32(intStringDelimiter)));
 		
@@ -3039,12 +3040,11 @@ public sealed class CKartrisCSVExporter
 	/// </summary>
 	private static void AddDelimiter(string value, StringBuilder stbData, Type colType)
 	{
-		if (value IsNot null && !string.IsNullOrEmpty(value))
+		if (value != null && !string.IsNullOrEmpty(value))
 		{
-			if (((((string) colType.FullName == "System.Int16") || ((string) colType.FullName == "System.Int32")) || ((string) colType.FullName == "System.Int64")) || (colType.FullName == ))
+			if (((((string) colType.FullName == "System.Int16") || ((string) colType.FullName == "System.Int32")) || ((string) colType.FullName == "System.Int64")) || (colType.FullName == "System.Double"))
 			{
-				"System.Double", "System.Byte", "System.Single", "System.Boolean", ;
-				"System.Decimal";
+				
 				stbData.Append(value.Replace(FieldDelimiter.ToString(), "/"));
 			}
 			else if ((string) colType.FullName == "System.String")

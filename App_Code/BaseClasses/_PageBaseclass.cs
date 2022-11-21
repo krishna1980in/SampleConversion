@@ -186,7 +186,7 @@ public abstract class _PageBaseClass : System.Web.UI.Page {
                         else {
                             Session("Back_Auth") = "";
                             cokKartris = new HttpCookie(HttpSecureCookie.GetCookieName("BackAuth"));
-                            cokKartris.Expires = CkartrisDisplayFunctions.NowOffset.AddDays(-, 1D);
+                            cokKartris.Expires = CkartrisDisplayFunctions.NowOffset.AddDays(-1D);
                             Response.Cookies.Add(cokKartris);
                         }
                         

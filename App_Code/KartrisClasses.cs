@@ -1014,7 +1014,7 @@ Input:
     }
 
     [Serializable()]
-    class Address
+    public class Address
     {
         public enum ADDRESS_TYPE
         {

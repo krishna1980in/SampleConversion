@@ -4,6 +4,268 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <!-- <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems> -->
+
   </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+   <ItemGroup>
+   <PackageReference Include="System.Data.Common" Version="4.3.0" />
+   <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+   <PackageReference Include="BouncyCastle.NetCore" Version="1.9.0" />
+   <PackageReference Include="MailChimp.Net.V3" version="5.3.1"  />
+   <PackageReference Include="MailChimp.Net.V3" Version="5.3.1" />
+   <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="7.0.0" />
+   <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+   <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" version="7.0.0"  />
+   <PackageReference Include="Microsoft.Extensions.Configuration.Binder" version="7.0.0"  />
+   <PackageReference Include="Microsoft.Extensions.DependencyInjection" version="7.0.0"  />
+   <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" version="7.0.0"  />
+   <PackageReference Include="Microsoft.Extensions.Http" version="7.0.0"  />
+   <PackageReference Include="Microsoft.Extensions.Logging" version="7.0.0"  />
+   <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" version="7.0.0"  />
+   <PackageReference Include="Microsoft.Extensions.Options" version="7.0.0"  />
+   <PackageReference Include="Microsoft.Extensions.Primitives" version="7.0.0"  />
+   <PackageReference Include="MimeKit" Version="3.4.2" />
+   <PackageReference Include="Newtonsoft.Json" version="13.0.1"  />
+   <PackageReference Include="PdfSharpCore" Version="1.3.41" />
+   <PackageReference Include="Portable.BouncyCastle" version="1.9.0"  />
+   <PackageReference Include="RestSharp" Version="108.0.3-alpha.0.20" />
+   <PackageReference Include="System.Buffers" Version="4.5.1" />
+   <PackageReference Include="System.ComponentModel.Annotations" version="5.0.0"  />
+  <PackageReference Include="System.Diagnostics.DiagnosticSource" version="6.0.0"  />
+  <PackageReference Include="System.Memory" version="4.5.4"  />
+  <PackageReference Include="System.Numerics.Vectors" version="4.5.0"  />
+  <PackageReference Include="System.Runtime.CompilerServices.Unsafe" version="6.0.0"  />
+  <PackageReference Include="System.Text.Encodings.Web" version="6.0.0"  />
+  <PackageReference Include="System.Text.Json" version="6.0.2"  />
+  <PackageReference Include="System.Threading.Tasks.Extensions" version="4.5.4"  />
+  <PackageReference Include="System.ValueTuple" version="4.5.0"  />
+   </ItemGroup>
+  <!-- <ItemGroup>
+    <Compile Include="My Project\MyNamespace.Static.1.Designer.cs" />
+    <Compile Include="404.cshtml.cs">
+      <DependentUpon>404.cshtml</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Basket.cshtml.cs">
+      <DependentUpon>Basket.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Callback.cshtml.cs">
+      <DependentUpon>Callback.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cshtml.cs">
+      <DependentUpon>Category.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.cshtml.cs">
+      <DependentUpon>Checkout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutComplete.cshtml.cs">
+      <DependentUpon>CheckoutComplete.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutProcess.cshtml.cs">
+      <DependentUpon>CheckoutProcess.cshtml</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Closed.cshtml.cs">
+      <DependentUpon>Closed.cshtml</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Compare.cshtml.cs">
+      <DependentUpon>Compare.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.cshtml.cs">
+      <DependentUpon>Contact.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cshtml.cs">
+      <DependentUpon>Customer.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerAccount.cshtml.cs">
+      <DependentUpon>CustomerAccount.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerAffiliates.cshtml.cs">
+      <DependentUpon>CustomerAffiliates.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerInvoice.cshtml.cs">
+      <DependentUpon>CustomerInvoice.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerTickets.cshtml.cs">
+      <DependentUpon>CustomerTickets.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerViewOrder.cshtml.cs">
+      <DependentUpon>CustomerViewOrder.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Error.cshtml.cs">
+      <DependentUpon>Error.cshtml</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Knowledgebase.cshtml.cs">
+      <DependentUpon>Knowledgebase.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="LargeImage.cshtml.cs">
+      <DependentUpon>LargeImage.cshtml</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiMedia.cshtml.cs">
+      <DependentUpon>MultiMedia.cshtml</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.cs" />
+    <Compile Include="My Project\Application.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.cs">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="News.cshtml.cs">
+      <DependentUpon>News.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Page.cshtml.cs">
+      <DependentUpon>Page.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordReset.cshtml.cs">
+      <DependentUpon>PasswordReset.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cshtml.cs">
+      <DependentUpon>Product.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Promotions.cshtml.cs">
+      <DependentUpon>Promotions.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Rss.cshtml.cs">
+      <DependentUpon>Rss.cshtml</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteMap.cshtml.cs">
+      <DependentUpon>SiteMap.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="VisaDetail.cshtml.cs">
+      <DependentUpon>VisaDetail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Wishlist.cshtml.cs">
+      <DependentUpon>Wishlist.cshtml</DependentUpon>
+    </Compile>
+  </ItemGroup> -->
+  <!-- <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>EmployeeManagementSystem.My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup> -->
+  <!-- <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="Image.ashx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>EmployeeManagementSystem.My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="KartrisQBService.asmx" />
+    <Content Include="Knowledgebase.cshtml" />
+    <Content Include="LargeImage.cshtml" />
+    <Content Include="License_GPL_v2.txt" />
+    <Content Include="Log.txt" />
+    <Content Include="MultiMedia.cshtml" />
+    <Content Include="News.cshtml" />
+    <Content Include="page.asp" />
+    <Content Include="Page.cshtml" />
+    <Content Include="PasswordReset.cshtml" />
+    <Content Include="prodtype.asp" />
+    <Content Include="product.asp" />
+    <Content Include="Product.cshtml" />
+    <Content Include="Promotions.cshtml" />
+    <Content Include="robots.txt" />
+    <Content Include="Rss.cshtml" />
+    <Content Include="SiteMap.cshtml" />
+    <Content Include="sitemap.xml" />
+    <Content Include="VisaDetail.cshtml" />
+    <Content Include="Wishlist.cshtml" />
+    <Content Include="_PrepareKartrisZip.bat" />
+    <None Include="packages.config" />
+    <Content Include="TaxRegime.config" />
+    <Content Include="vwd.webinfo" />
+    <Content Include="WebEssentials2015-Settings.json" />
+    <Content Include="website.publishproj" />
+    <Content Include="web_breadcrumb.sitemap" />
+    <Content Include="web_menu.sitemap" />
+  </ItemGroup> -->
+  <!-- <ItemGroup>
+    <Content Include="404.cshtml" />
+    <Content Include="404Template.html" />
+    <Content Include="Basket.cshtml" />
+    <Content Include="Callback.cshtml" />
+    <Content Include="Category.cshtml" />
+    <Content Include="Checkout.cshtml" />
+    <Content Include="CheckoutComplete.cshtml" />
+    <Content Include="CheckoutProcess.cshtml" />
+    <Content Include="Closed.cshtml" />
+    <Content Include="Compare.cshtml" />
+    <Content Include="Contact.cshtml" />
+    <Content Include="Customer.cshtml" />
+    <Content Include="CustomerAccount.cshtml" />
+    <Content Include="CustomerAffiliates.cshtml" />
+    <Content Include="CustomerInvoice.cshtml" />
+    <Content Include="CustomerTickets.cshtml" />
+    <Content Include="CustomerViewOrder.cshtml" />
+    <Content Include="Error.cshtml" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+  </ItemGroup> -->
 
 </Project>

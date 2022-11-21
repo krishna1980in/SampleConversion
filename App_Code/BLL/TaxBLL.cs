@@ -384,7 +384,7 @@ public class TaxRegime
     ///     ''' generic Name Value Pair class
     ///     ''' </summary>
     ///     ''' <remarks></remarks>
-    class KartrisNameValuePair
+    public class KartrisNameValuePair
     {
         public string Name { get; set; }
         public string Value { get; set; }
