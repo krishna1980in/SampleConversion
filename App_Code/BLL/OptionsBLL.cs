@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Data;
+using System.Data.SqlClient;
 
 using System.Globalization;
 using System.IO;
@@ -26,7 +27,6 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-using System.Web.HttpContext;
 using kartrisOptionsDataTableAdapters;
 using CkartrisEnumerations;
 using CkartrisFormatErrors;

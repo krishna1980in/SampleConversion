@@ -1,85 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <!-- <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
-    <EnableDefaultContentItems>false</EnableDefaultContentItems> -->
-
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Web.Mobile" />
-  </ItemGroup>
-  <ItemGroup>
-    <Import Include="Microsoft.VisualBasic" />
-    <Import Include="System" />
-    <Import Include="System.Collections" />
-    <Import Include="System.Collections.Generic" />
-    <Import Include="System.Data" />
-    <Import Include="System.Diagnostics" />
-    <Import Include="System.Collections.Specialized" />
-    <Import Include="System.Configuration" />
-    <Import Include="System.Text" />
-    <Import Include="System.Text.RegularExpressions" />
-    <Import Include="System.Web" />
-    <Import Include="System.Web.Caching" />
-    <Import Include="System.Web.SessionState" />
-    <Import Include="System.Web.Security" />
-    <Import Include="System.Web.Profile" />
-    <Import Include="System.Web.UI" />
-    <Import Include="System.Web.UI.WebControls" />
-    <Import Include="System.Web.UI.WebControls.WebParts" />
-    <Import Include="System.Web.UI.HtmlControls" />
-  </ItemGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
-   <ItemGroup>
-   <PackageReference Include="System.Data.Common" Version="4.3.0" />
-   <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
-   <PackageReference Include="BouncyCastle.NetCore" Version="1.9.0" />
-   <PackageReference Include="MailChimp.Net.V3" version="5.3.1"  />
-   <PackageReference Include="MailChimp.Net.V3" Version="5.3.1" />
-   <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="7.0.0" />
-   <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
-   <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" version="7.0.0"  />
-   <PackageReference Include="Microsoft.Extensions.Configuration.Binder" version="7.0.0"  />
-   <PackageReference Include="Microsoft.Extensions.DependencyInjection" version="7.0.0"  />
-   <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" version="7.0.0"  />
-   <PackageReference Include="Microsoft.Extensions.Http" version="7.0.0"  />
-   <PackageReference Include="Microsoft.Extensions.Logging" version="7.0.0"  />
-   <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" version="7.0.0"  />
-   <PackageReference Include="Microsoft.Extensions.Options" version="7.0.0"  />
-   <PackageReference Include="Microsoft.Extensions.Primitives" version="7.0.0"  />
-   <PackageReference Include="MimeKit" Version="3.4.2" />
-   <PackageReference Include="Newtonsoft.Json" version="13.0.1"  />
-   <PackageReference Include="PdfSharpCore" Version="1.3.41" />
-   <PackageReference Include="Portable.BouncyCastle" version="1.9.0"  />
-   <PackageReference Include="RestSharp" Version="108.0.3-alpha.0.20" />
-   <PackageReference Include="System.Buffers" Version="4.5.1" />
-   <PackageReference Include="System.ComponentModel.Annotations" version="5.0.0"  />
-  <PackageReference Include="System.Diagnostics.DiagnosticSource" version="6.0.0"  />
-  <PackageReference Include="System.Memory" version="4.5.4"  />
-  <PackageReference Include="System.Numerics.Vectors" version="4.5.0"  />
-  <PackageReference Include="System.Runtime.CompilerServices.Unsafe" version="6.0.0"  />
-  <PackageReference Include="System.Text.Encodings.Web" version="6.0.0"  />
-  <PackageReference Include="System.Text.Json" version="6.0.2"  />
-  <PackageReference Include="System.Threading.Tasks.Extensions" version="4.5.4"  />
-  <PackageReference Include="System.ValueTuple" version="4.5.0"  />
-   </ItemGroup>
-  <!-- <ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="BouncyCastle.NetCore" Version="1.9.0" />
+    <PackageReference Include="MailChimp.Net.V3" version="5.3.1" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Primitives" version="7.0.0" />
+    <PackageReference Include="MimeKit" Version="3.4.2" />
+    <PackageReference Include="Newtonsoft.Json" version="13.0.1" />
+    <PackageReference Include="PdfSharpCore" Version="1.3.41" />
+    <PackageReference Include="Portable.BouncyCastle" version="1.9.0" />
+    <PackageReference Include="RestSharp" Version="108.0.3-alpha.0.20" />
+    <PackageReference Include="System.Buffers" Version="4.5.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" version="5.0.0" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" version="6.0.0" />
+    <PackageReference Include="System.Memory" version="4.5.4" />
+    <PackageReference Include="System.Numerics.Vectors" version="4.5.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" version="6.0.0" />
+    <PackageReference Include="System.Text.Encodings.Web" version="6.0.0" />
+    <PackageReference Include="System.Text.Json" version="6.0.2" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" version="4.5.4" />
+    <PackageReference Include="System.ValueTuple" version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="My Project\MyNamespace.Static.1.Designer.cs" />
     <Compile Include="404.cshtml.cs">
       <DependentUpon>404.cshtml</DependentUpon>
@@ -194,16 +158,16 @@
     <Compile Include="Wishlist.cshtml.cs">
       <DependentUpon>Wishlist.cshtml</DependentUpon>
     </Compile>
-  </ItemGroup> -->
-  <!-- <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <CustomToolNamespace>EmployeeManagementSystem.My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-  </ItemGroup> -->
-  <!-- <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
     <Content Include="Image.ashx" />
@@ -244,8 +208,8 @@
     <Content Include="website.publishproj" />
     <Content Include="web_breadcrumb.sitemap" />
     <Content Include="web_menu.sitemap" />
-  </ItemGroup> -->
-  <!-- <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="404.cshtml" />
     <Content Include="404Template.html" />
     <Content Include="Basket.cshtml" />
@@ -266,6 +230,12 @@
     <Content Include="Error.cshtml" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-  </ItemGroup> -->
-
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.Federation" Version="4.10.*" />
+  </ItemGroup>
 </Project>
