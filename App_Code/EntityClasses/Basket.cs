@@ -1086,8 +1086,8 @@ namespace Kartris
                 }
                 catch (Exception ex)
                 {
-                    CkartrisFormatErrors.LogError("BasketBLL.CalculateShipping: " + ex.Message + Constants.vbCrLf + "DestinationID: " + numDestinationID + Constants.vbCrLf
-                  + "ShippingID: " + numShippingID + Constants.vbCrLf
+                    CkartrisFormatErrors.LogError("BasketBLL.CalculateShipping: " + ex.Message + "\r\n" + "DestinationID: " + numDestinationID + "\r\n"
+                  + "ShippingID: " + numShippingID + "\r\n"
                   + "This can happen if there is no valid shipping method for the weight/cost of this order.");
 
                     _ShippingName = "";
@@ -1099,7 +1099,7 @@ namespace Kartris
                 _ShippingName = "";
                 _ShippingDescription = "";
                 if (numShippingID > 0)
-                    CkartrisFormatErrors.LogError("BasketBLL.CalculateShipping Error - " + "DestinationID: " + numDestinationID + Constants.vbCrLf
+                    CkartrisFormatErrors.LogError("BasketBLL.CalculateShipping Error - " + "DestinationID: " + numDestinationID + "\r\n"
                                          + "ShippingID: " + numShippingID);
             }
         }
@@ -1140,7 +1140,7 @@ namespace Kartris
             if (System.Convert.ToInt32(objValue) == 0 & numV_ID != 0)
                 // Product not call for price, maybe there is a version
                 objValue = objObjectConfigBLL.GetValue("K:version.callforprice", numV_ID);
-            return objValue;
+            return System.Convert.ToInt16(objValue);
         }
     }
 }
