@@ -32,6 +32,7 @@ namespace kartris
     [System.ServiceModel.MessageContractAttribute(WrapperName="checkVat", WrapperNamespace="urn:ec.europa.eu:taxud:vies:services:checkVat:types", IsWrapped=true)]
     public partial class checkVatRequest
     {
+
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:ec.europa.eu:taxud:vies:services:checkVat:types", Order=0)]
         public string countryCode;

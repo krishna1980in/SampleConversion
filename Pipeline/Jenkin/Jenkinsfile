@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+    environment {
+        dotnet= 'C:/Program Files/dotnet/dotnet.exe'
+    }
+    stages {
+        stage('Restore PACKAGES') {
+            steps {
+               bat 'dotnet restore SampleConversion.sln'
+            }
+        }
+        stage('Clean') {
+            steps {
+               bat 'dotnet clean SampleConversion.sln'
+            }
+        }
+        stage('Build') {
+            steps {
+                bat 'dotnet build SampleConversion.sln --configuration Release'
+            }
+        }
+        stage('Unit Test') {
+            steps {
+                bat 'dotnet test SampleConversion.sln --configuration Release'
+            }
+        }
+        stage('Functional Test') {
+            steps {
+                bat 'dotnet test SampleConversion.sln --configuration Release'
+            }
+        }
+        stage('Code Quality Analysis') {
+            steps {
+                bat 'dotnet sonarscanner begin /k:"SampleConversion" /d:sonar.host.url="http://localhost:9900"  
+  					/d:sonar.login="ef1a11a18572cfdf8f6c304976c0899b71a58c0e"'
+  				 bat 'dotnet build SampleConversion.sln'
+  				 bat 'dotnet sonarscanner end /d:sonar.login="ef1a11a18572cfdf8f6c304976c0899b71a58c0e"'
+            }
+        }
+    }
+}
