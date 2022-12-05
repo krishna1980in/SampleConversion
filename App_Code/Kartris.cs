@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using KartSettingsManager;
 using Microsoft.Web.Administration;
 using System.Threading;
@@ -1071,7 +1073,7 @@ public sealed class CkartrisDataManipulation
 	/// <summary>
 	/// Create string of parameters for stored procedures
 	/// </summary>
-	public static string CreateQuery(SqlClient.SqlCommand sqlCmd)
+	public static string CreateQuery(SqlCommand sqlCmd)
 	{
 		StringBuilder sbdParameters = new StringBuilder("");
 		try

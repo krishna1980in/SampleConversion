@@ -2,7 +2,7 @@
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kartis", "kartis.csproj", "{3600F69B-CCEC-0AE0-0528-36D65A75AF94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kartris", "kartris.csproj", "{3600F69B-CCEC-0AE0-0528-36D65A75AF94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -23,9 +23,9 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-using PdfSharp;
-using PdfSharp.Drawing;
-using PdfSharp.Pdf;
+using PdfSharpCore;
+using PdfSharpCore.Drawing;
+using PdfSharpCore.Pdf;
 
 /// <summary>
 

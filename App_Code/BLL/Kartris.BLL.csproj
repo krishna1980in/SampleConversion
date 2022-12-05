@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\Kartris.DAL.csproj" />
+    <ProjectReference Include="..\Common\Kartris.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="BouncyCastle.NetCore" Version="1.9.0" />
+    <PackageReference Include="MailChimp.Net.V3" version="5.3.1"  />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" version="7.0.0"  />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" version="7.0.0"  />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" version="7.0.0"  />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" version="7.0.0"  />
+    <PackageReference Include="Microsoft.Extensions.Http" version="7.0.0"  />
+    <PackageReference Include="Microsoft.Extensions.Logging" version="7.0.0"  />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" version="7.0.0"  />
+    <PackageReference Include="Microsoft.Extensions.Options" version="7.0.0"  />
+    <PackageReference Include="Microsoft.Extensions.Primitives" version="7.0.0"  />
+    <PackageReference Include="MimeKit" Version="3.4.2" />
+    <PackageReference Include="Newtonsoft.Json" version="13.0.1"  />
+    <PackageReference Include="PdfSharpCore" Version="1.3.41" />
+    <PackageReference Include="Portable.BouncyCastle" version="1.9.0"  />
+    <PackageReference Include="RestSharp" Version="108.0.3-alpha.0.20" />
+    <PackageReference Include="System.Buffers" Version="4.5.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" version="5.0.0"  />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" version="6.0.0"  />
+    <PackageReference Include="System.Memory" version="4.5.4"  />
+    <PackageReference Include="System.Numerics.Vectors" version="4.5.0"  />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" version="6.0.0"  />
+    <PackageReference Include="System.Text.Encodings.Web" version="6.0.0"  />
+    <PackageReference Include="System.Text.Json" version="6.0.2"  />
+    <PackageReference Include="System.Threading.Tasks.Extensions" version="4.5.4"  />
+    <PackageReference Include="System.ValueTuple" version="4.5.0"  />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

@@ -23,6 +23,10 @@ using System.Runtime.CompilerServices;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Localization;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
 
 using System.Configuration;
 using System.Web;
@@ -33,6 +37,7 @@ using System.Collections;
 using System.Collections.Specialized;
 using kartrisLanguageDataTableAdapters;
 using kartrisLanguageData;
+
 
 /// <summary>
 
@@ -154,22 +159,22 @@ public sealed class SqlResourceProviderFactory : ResourceProviderFactory
             _resources = resources;
         }
 
-        private IDictionaryEnumerator GetEnumerator1()
+        IDictionaryEnumerator IResourceReader.GetEnumerator()
         {
             return _resources.GetEnumerator();
         }
 
 
-        private void Close()
+        public void Close()
         {
         }
 
-        private IEnumerator GetEnumerator()
+         IEnumerator IEnumerable.GetEnumerator()
         {
             return _resources.GetEnumerator();
         }
 
-        private void Dispose()
+        public void Dispose()
         {
         }
     }
@@ -185,7 +190,7 @@ internal sealed class SqlResourceHelper
     /// <summary>
     ///     ''' 
     ///     ''' </summary>
-    public static SqlResourceHelper()
+    static SqlResourceHelper()
     {
     }
 
