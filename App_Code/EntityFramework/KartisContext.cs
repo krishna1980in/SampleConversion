@@ -6,7 +6,7 @@ namespace Kartis
     public class KartisContext : DbContext
     {
    
-        public DbSet<kartrisConfigData> kartrisConfigDatas { get; set; }
+        public DbSet<Config> Configs { get; set; }
         public DbSet<ConfigCache> ConfigCaches { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
