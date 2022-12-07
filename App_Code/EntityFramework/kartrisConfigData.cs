@@ -22,13 +22,24 @@ namespace Kartis
         public string CFG_Description { get; set; }
         
        
-        public string CFG_VersionAdded { get; set; }
+        public float CFG_VersionAdded { get; set; }
         
      
         public string CFG_DefaultValue { get; set; }
          public string CactuShopName_DEPRECATED { get; set; } 
          public string CFG_Important { get; set; }
         
-        public ICollection<kartrisConfigData> kartrisConfigDatas { get; set; } = new List<Book>();
+        public ICollection<kartrisConfigData> kartrisConfigDatas { get; set; } = new List<kartrisConfigData>();
+        
+
+    }
+     public class ConfigCache
+    {
+         public string CFG_Name { get; set; }
+        
+       
+        public string CFG_Value { get; set; }
+        public ICollection<ConfigCache> ConfigCaches { get; set; } = new List<ConfigCache>();
+
     }
 }
